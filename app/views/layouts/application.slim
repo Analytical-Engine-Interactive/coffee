@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title CoffeePubs Development
+    coffee:
+      # Queue up scripts to run after page load
+      window.after_load_store = []
+      window.after_load = (callback) ->
+        window.after_load_store.push(callback)
+          
+    meta charset="UTF-8"  
+    meta content="en_US" property="og:locale" 
+    
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    = stylesheet_link_tag    'application', media: 'all'
+    = csrf_meta_tags
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv-printshiv'
+      = javascript_include_tag 'es5-shim/es5-sham-min'
+
+  body
+    section#page-header
+      .container-wide
+        / Page Top
+        - if content_for? :header
+          = yield :header
+        - else
+          = render 'layouts/header'
+
+        / Page Nav  
+        - if content_for? :nav
+          = yield :nav
+        - else
+          = render 'layouts/nav'
+
+    / Page Body
+    section#page-body
+      = yield
+
+    footer#main-footer.section-content
+      / Page Footer
+      - if content_for? :footer
+        = yield :footer
+      - else
+        = render 'layouts/footer'
+
+    / Include page scripts
+    = javascript_include_tag 'application'
+
+    javascript:
+      self.after_load_store.forEach(function (callback) {jQuery(callback)});
+      self.after_load = jQuery;
+
+      
