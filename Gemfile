@@ -6,6 +6,7 @@ gem 'rails', '4.2.4'
 gem 'thin'
 gem 'mysql2', '~> 0.3.19'
 gem 'rack-ssl' # Force use of SSL
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 
 # Debugging
 gem 'ruby-prof' # Profiler
