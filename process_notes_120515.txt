@@ -23,6 +23,7 @@ google analytics??
 
 where is pricing set?  POS?  xero is where all records are kept for all customers and orders.
 
+
 POS systems: is there a better one than in store?
 
 shopkeep, had more api
@@ -46,4 +47,46 @@ stripe is connected to xero
 if after the 48 hours the order has not been declined, Nikc will need to go into the system and generate an invoice to be brought with the order
 
 want to have everything in the ctaering kitchen on ipad and printer, so there is an ipad and can print by order or can print out an aggregate production list for the day that says what has tp be done for the day
+
+when a coffee order comes in, need to have some way of knowing.  an alert has to come in on ipad POS, a popup, a print out.  the printer is very quiet, so may not be noticed right away.  needs to be something that is noticed.
+
+tikhon will mockup the ordering system and emails over  the next week or so
+figure out howe they’re doing things thru xero
+api research
+
+Kyle
+for prepping food, the thing that needs to be added is a hard, a ticket or a piece of paper printed out…a ticket, like they print out in restaurants, would be good.  by order and consolidated by day, because he wants to make one kind of sandwich all at once.
+
+consolidate not by day but by order times due, clustered if they are 30 minutes or 90 minutes apart.  if they are longer apart, cluster them as a seperate order cluster
+
+the cluster size is dependant on number of sandwiches that can be made in an hour and in a day
+
+quality control on teh way put: there needs to be an order sheet that Kyle can do QA on: verify numbers etc. and sign off somehow on the order going out, the sheet will go out with the order along and maybe needs to be checked off and signed off in an ipad and printed for the order and then there would be a copy for Kyle
+
+it will be different people doing the accounability check.  whoever is doing it clicks the accountability check button, enters their PIN, and does the checking and signing, prints the sheet and that goes into the system as done, has to clearly mark that order as done and mark those itesm as done on the worksheet.
+
+the cluster lists can be created by the user, not by the system: the user picks time blocks and prints an aggregated list of their choice, but the system can suggest a predictive option for what you should print
+
+you can also print by the order, and verify the assembly of spcific orders
+
+special notes can be attached to orders
+these notes would be made when the orders are processed in the 48 hour period: Steve and Kyle are going in and verifyng orders, this is where they make the ingredient list, and coordinate the production and schedule the day
+
+so the orders move through 3 states:
+ordered
+verified
+printed
+
+notes for the prep people to make it fun
+a visible clock and a countdown reminder telling you what’s next to go out and when.  Anything special about that customer for the delivery people to know about, names etc.
+
+with the orders they need to send out labels that go on the platters that list the ingredients in the sandwich
+
+could these be printed on a label printer, as sticker labels that they would stick onto cards
+might be a phase 2 thing
+
+categories that make sense for them:
+protein
+produce
+dairy
 
