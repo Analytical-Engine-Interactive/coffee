@@ -14,5 +14,5 @@ To install follow the following procedure:
 
 1. Clone the repo into a local directory with `git clone git@github.com:cmcglade/coffee.git` and enter the new directory
 2. Run `bundle install` to install all the dependencies
-3. Run `cp .env .env.local` to create a local copy of the environment config
-4. Update `.env.local` with the login settings for your MySQL instance
+3. Run `cp .env .env.local` to create a local copy of the environment config file
+4. Update `.env.local` with the login settings for your local MySQL instance
