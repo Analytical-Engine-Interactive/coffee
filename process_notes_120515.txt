@@ -1,0 +1,49 @@
+a person orders food online
+Nick gets an email
+Nick quotes the job: he goes into xero and transposes all the items into a quote form
+Nick sends the quote to the customer and a calendar event to himself
+Nick uses the calendar event to make the food
+
+
+At new location: wants a system for wifi that is better
+can people who are members of the app/of the rewards system get free wifi but others don;t ??
+
+they need a better system for displaying what needs to be made for the day for catering: right now, if they print the orders, it prints in the format they have quotes it (for example 4 half dozen cookies).  this could look like 4 cookies.  need a way to rpint the different “to do’s” in the right format
+
+branded packaging will come in January
+
+
+Jem to audit different ordering systems
+pizza pizza
+swiss chalet
+starbucks ordering system
+
+get login for website
+google analytics??
+
+where is pricing set?  POS?  xero is where all records are kept for all customers and orders.
+
+POS systems: is there a better one than in store?
+
+shopkeep, had more api
+
+
+need to whiteboard what happens in which system
+POS: rewards, customer/members
+coffee ordering will have crossover between pos and delivery
+
+for checkout We need to build it so it can take a cheque
+anything over $1000 they need a credit card for 20% to hold the order
+other than that the user can choose to pay by cheque
+
+need to generate customer emails that are friendly but can’t be changed later than 48 hours to the business day before order is due
+so want to give them the capability to change the order from email but that if they click that button within the deadline the page gives them a message saying 
+
+they coffee pub gets an email, Kyle and kitchen, that are easier to read for order prep
+
+stripe is connected to xero
+
+if after the 48 hours the order has not been declined, Nikc will need to go into the system and generate an invoice to be brought with the order
+
+want to have everything in the ctaering kitchen on ipad and printer, so there is an ipad and can print by order or can print out an aggregate production list for the day that says what has tp be done for the day
+
