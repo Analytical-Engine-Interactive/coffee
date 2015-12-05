@@ -1,0 +1,48 @@
+scss:
+  .login-box {
+    border: 1px solid black;
+  }
+
+  .login-main {
+    & > * {
+      min-height: 200px;
+    }
+    
+  }
+
+  .login-legal {
+    & > * {
+      padding-top: 30px;
+      height: 100px;
+    }
+  }
+.row
+  .col-xs-offset-2.col-xs-8.login-box
+    .row.login-main
+      .col-xs-6 
+        h2 Login Here
+        form
+          .form-group
+            label for="email" Email Address
+            input.form-control type="email" name="email" ng-model="page.email"
+
+          .form-group
+            label for="password" Password
+            input.form-control type="password" name="password" ng-model="page.password"
+
+          button.btn.btn-primary.btn-block ng-click="" Login
+
+      .col-xs-6 
+        h2 Register Here
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur cursus sapien viverra mollis. 
+
+        p Pellentesque mollis est non porta aliquam. Quisque ac quam nec ligula porta lacinia vitae egestas erat.
+
+        button.btn.btn-primary.btn-block ng-click="" Go to Registeration
+
+
+        
+    
+    .row.login-legal
+      .col-xs-12.text-center Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras consectetur cursus sapien viverra mollis. Pellentesque mollis est non porta aliquam. Quisque ac quam nec ligula porta lacinia vitae egestas erat. Pellentesque condimentum augue sit amet tincidunt elementum. Proin venenatis vestibulum tincidunt. 
+

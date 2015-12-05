@@ -10,10 +10,11 @@ html
           
     meta charset="UTF-8"  
     meta content="en_US" property="og:locale" 
-    
     meta name='viewport' content='width=device-width, initial-scale=1'
-    = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'angular_and_overrides'
 
     /[if lt IE 9]
       = javascript_include_tag 'html5shiv-printshiv'

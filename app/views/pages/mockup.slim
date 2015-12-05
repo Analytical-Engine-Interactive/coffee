@@ -1,0 +1,62 @@
+scss:
+  #main {
+    margin-top: 10px;
+  }
+
+  #nav-target {
+    margin-top: 10px;
+  }
+
+  #loading {
+    z-index: 10000;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+coffee:
+  coffeepubs_module = angular.module('coffeepubs', ['affix'])
+
+  coffeepubs_module.controller 'MockupController', ['$scope', ($scope) ->
+    $scope.disableSticking = false;
+
+    $scope.data = this
+
+    @valid_states = 
+      cust_login: "Customer Login Page"
+      cust_order: "Customer Order Page"
+      store_list: "Store Order List"
+      store_single: "Store Order Single"
+    
+    @state = "cust_order"
+  ]
+
+section#main
+  div ng-app="coffeepubs" ng-controller="MockupController as page"
+    #loading ng-if="false"
+      h1.text-center Loading... Please Wait.
+
+    script type='text/ng-template' id="templates/cust_login.html"
+      = render 'cust_login'
+
+    script type='text/ng-template' id="templates/cust_order.html"
+      = render 'cust_order'
+
+    script type='text/ng-template' id="templates/store_list.html"
+      = render 'store_list'
+
+    script type='text/ng-template' id="templates/store_single.html"
+      = render 'store_single'
+
+    .container
+      .row
+        .col-md-12
+          .nav.nav-tabs
+            li ng-repeat="(state_name, state_desc) in page.valid_states" ng-class="{active: page.state == state_name}"
+              a href="javascript:void(0)" ng-click="page.state = state_name" = "{{state_desc}}"
+
+        .col-md-12
+          div#nav-target ng-include="'templates/' + page.state + '.html'"
+      
