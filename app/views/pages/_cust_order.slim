@@ -1,13 +1,71 @@
 scss:
-  .order-box {
+  .border-box {
+    margin-bottom: 10px;
     border: 1px solid black;
   }
+  .border-top {
+    border-top: 2px solid black;
+  }
+  .order-table {
+    td, th {
+      text-align: center;
+    }
+  }
 
-.row
-  .col-xs-10
+.row ng-controller="OrderController as orders"
+  .col-xs-offset-10.col-xs-2
+    .btn.btn-primary.btn-block ng-if="!root.user" ng-click="root.needs_user = true" Login
+    .btn.btn-danger.btn-block ng-if="root.user" ng-click="root.user = null" Logout
+  .col-xs-10: .row
     - for a in 1..10
       .col-xs-4.col-md-3
-        a.thumbnail href="#" 
+        a.thumbnail ng-mouseenter="orders.show_details(#{a})" ng-mouseleave="orders.clear_details()" ng-click="orders.add_item(#{a})"
           img src="https://placehold.it/150x150"
   .col-xs-2
-    .order-box affix="" Order Details
+    .row
+      .col-xs-12.border-box 
+        | Order Details
+        .row ng-repeat="(cart_item, cart_count) in orders.cart"
+          .col-xs-6 
+            | Item: {{cart_item}}
+          .col-xs-6 
+            | {{cart_count}}
+            i.fa.fa-angle-down ng-click="orders.remove_item(cart_item)"
+            i.fa.fa-angle-double-down ng-click="orders.remove_item(cart_item, true)"
+        .row ng-if="orders.total > 0"
+          .col-xs-6.border-top
+            | Total
+          .col-xs-6.border-top
+            = "{{orders.total}}"
+          .col-xs-12.text-center
+            .btn.btn-primary ng-click="orders.state = 'checkout'" Checkout
+      .col-xs-12.border-box ng-if="active_item"
+        | Details about {{active_item.val}}
+  .box.col-xs-12 layer="mid" ng-if="orders.state == 'checkout'"
+    h2 Ordering:
+    .row
+      .col-xs-10
+        table.table.table-bordered.order-table
+          tr
+            th Item
+            th Amount
+          tr ng-repeat="(cart_item, cart_count) in orders.cart"
+            td = "{{$index}}: Item {{cart_item}}"
+            td = "{{cart_count}}"
+          tr
+            th Total
+            td = "{{orders.total}}"
+      .col-xs-2
+        div ng-if="root.user"
+          | Logged in as {{root.user.name}}
+        div ng-if="!root.user"
+          | You will need to login to continue
+
+    .row
+      .col-xs-12
+        .btn.btn-primary.btn-block ng-click="orders.continue_checkout()" Continue
+        .btn.btn-danger.btn-block ng-click="orders.state = 'initial'" Cancel
+
+  .box.col-xs-12 layer="mid" ng-if="orders.state == 'confirm'"
+    h1 The Confirmage
+    .btn.btn-danger.btn-block ng-click="orders.state = 'initial'" Cancel
